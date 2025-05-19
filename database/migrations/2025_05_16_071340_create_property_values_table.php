@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create('property_values', function (Blueprint $table) {
             $table->id();
             $table->foreignId('property_id')->constrained('properties')->onDelete('cascade');
-            $table->string('value');
+            $table->string('value')->index();
             $table->timestamps();
         });
     }
